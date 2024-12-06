@@ -1,0 +1,29 @@
+ALGORITHM 
+VARdef tri_par_insertion(arr):
+    # Parcourir tous les éléments du tableau à partir du deuxième
+    for i in range(1, len(arr)):
+        # L'élément actuel à insérer
+        cle = arr[i]
+        # Initialiser j à l'indice précédent
+        j = i - 1
+
+        # Déplacer les éléments de la partie triée qui sont plus grands que 'cle'
+        # vers une position après leur position actuelle
+        while j >= 0 and arr[j] > cle:
+            arr[j + 1] = arr[j]
+            j -= 1
+        
+        # Insérer la clé à la bonne position
+        arr[j + 1] = cle
+
+# Exemple d'utilisation
+tableau = [12, 11, 13, 5, 6]
+print("Tableau original :", tableau)
+
+tri_par_insertion(tableau)
+print("Tableau trié :", tableau)
+
+    
+BEGIN
+    
+END
